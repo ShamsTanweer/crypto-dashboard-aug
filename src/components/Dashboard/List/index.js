@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 function List({ coin }) {
   return (
     <Link to={`/coin/${coin.id}`}>
-      <table>
     <tbody className="list-row">
     <tr className="list-row">
       <Tooltip title="Logo" placement="bottom-start">
@@ -92,7 +91,6 @@ function List({ coin }) {
       </Tooltip>
     </tr>
     </tbody>
-    </table>
     </Link>
     
   );
