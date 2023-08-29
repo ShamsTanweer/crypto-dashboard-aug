@@ -35,6 +35,7 @@ export default function TabsComponent({ coins }) {
   });
 
   return (
+
     <ThemeProvider theme={theme}>
       <TabContext value={value}>
         <TabList
@@ -53,13 +54,15 @@ export default function TabsComponent({ coins }) {
           </div>
         </TabPanel>
         <TabPanel value="List">
-          <table className="list-table">
+          {/* <table className="list-table">
+            <tbody className="list-table"> */}
               {coins.map((item, index) => {
                 return (
                   <List coin={item} key={index}/>
                 );
               })}
-              </table>
+              {/* </tbody>
+              </table> */}
         </TabPanel>
       </TabContext>
     </ThemeProvider>

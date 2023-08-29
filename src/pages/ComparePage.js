@@ -13,7 +13,7 @@ import TogglePriceType from "../components/Coin/PriceType";
 import LineChart from "../components/Coin/LineChart/lineChart";
 
 function ComparePage() {
-  const [crypto1, setCrypto1] = useState("bitcoin");
+  const [crypto1, setCrypto1] = useState("solana");
   const [crypto2, setCrypto2] = useState("ethereum");
   const [crypto1Data, setCrypto1Data] = useState({});
   const [crypto2Data, setCrypto2Data] = useState({});
@@ -81,6 +81,8 @@ function ComparePage() {
       setCrypto1(event.target.value);
       const data = await getCoinData(event.target.value);
       coinObject(setCrypto1Data, data);
+      setIsLoading(false);
+
     }
 
   };

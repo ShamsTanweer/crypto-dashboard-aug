@@ -10,10 +10,11 @@ import { Link } from "react-router-dom";
 function List({ coin }) {
   return (
     <Link to={`/coin/${coin.id}`}>
-    <tbody className="list-row">
+                <table className="list-table">
+            <tbody className="list-row">
     <tr className="list-row">
       <Tooltip title="Logo" placement="bottom-start">
-        <td className="td-imag td-right-aligne">
+        <td className="td-image td-right-aligne">
           <img src={coin.image} alt="coin-logo" className="coin-logo" />
         </td>
       </Tooltip>
@@ -91,6 +92,7 @@ function List({ coin }) {
       </Tooltip>
     </tr>
     </tbody>
+    </table>
     </Link>
     
   );
