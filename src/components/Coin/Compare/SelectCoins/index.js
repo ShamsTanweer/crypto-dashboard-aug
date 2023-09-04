@@ -8,6 +8,15 @@ function SelectCoins({ crypto1, crypto2, handleCoinChange }) {
   const [allCoins, setAllCoins] = useState([]);
 
   const styles = {
+    // width: {
+    //   xs: "", //0
+    //   sm: "", //600
+    //   md: "", //900
+    //   lg: "", //1200
+    //   xl: "auto", //1536
+
+    // },
+    width: "auto",
     height: "2.5rem",
     color: "var(--white)",
     "& .MuiOutlinedInput-notchedOutline": {
@@ -21,6 +30,16 @@ function SelectCoins({ crypto1, crypto2, handleCoinChange }) {
         borderColor: "#3a80e9",
       },
     },
+    "& .MuiSelect-select": {
+      fontSize: {
+        xs: "60%", //0
+        sm: "70%", //600
+        md: "70%", //900
+        lg: "90%", //1200
+        xl: "100%", //1536
+
+      }
+    },
   };
 
   useEffect(() => {
@@ -33,8 +52,9 @@ function SelectCoins({ crypto1, crypto2, handleCoinChange }) {
   }
 
   return (
+    <div className="select-coins-div">
     <div className="coins-flex">
-      <p>Crypto 1</p>
+      <p className="select-p">Crypto 1:</p>
       <Select
         sx={styles}
         value={crypto1}
@@ -50,7 +70,7 @@ function SelectCoins({ crypto1, crypto2, handleCoinChange }) {
           ))}
       </Select>
 
-      <p>Crypto 2</p>
+      <p className="select-p">Crypto 2:</p>
       <Select
         sx={styles}
         value={crypto2}
@@ -65,7 +85,8 @@ function SelectCoins({ crypto1, crypto2, handleCoinChange }) {
             </MenuItem>
           ))}
       </Select>
-    </div>
+      </div>
+      </div>
   );
 }
 

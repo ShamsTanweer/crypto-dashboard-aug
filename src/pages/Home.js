@@ -1,7 +1,6 @@
 import React from "react";
-import Header from '../components/Common/Header/index';
-import MainComponent from '../components/LandingPage/MainComponent/index';
-
+import Header from "../components/Common/Header/index";
+import MainComponent from "../components/LandingPage/MainComponent/index";
 function Home() {
   return (
     <div>

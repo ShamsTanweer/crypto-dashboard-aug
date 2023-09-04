@@ -3,11 +3,9 @@ import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
-import { transform } from "framer-motion";
 import { ThemeProvider, createTheme } from "@mui/material";
-import { green } from "@mui/material/colors";
 import Grid from "../Grid";
-import './styles.css'
+import "./styles.css";
 import List from "../List";
 
 export default function TabsComponent({ coins }) {
@@ -35,7 +33,6 @@ export default function TabsComponent({ coins }) {
   });
 
   return (
-
     <ThemeProvider theme={theme}>
       <TabContext value={value}>
         <TabList
@@ -49,19 +46,17 @@ export default function TabsComponent({ coins }) {
         <TabPanel value="Grid">
           <div className="grid-flex">
             {coins.map((coin, index) => {
-              return <Grid coin={coin} key={index}/>
+              return <Grid coin={coin} key={index} />;
             })}
           </div>
         </TabPanel>
         <TabPanel value="List">
           {/* <table className="list-table">
             <tbody className="list-table"> */}
-              {coins.map((item, index) => {
-                return (
-                  <List coin={item} key={index}/>
-                );
-              })}
-              {/* </tbody>
+          {coins.map((item, index) => {
+            return <List coin={item} key={index} />;
+          })}
+          {/* </tbody>
               </table> */}
         </TabPanel>
       </TabContext>

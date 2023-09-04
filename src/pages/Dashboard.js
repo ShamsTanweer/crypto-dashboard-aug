@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Common/Header";
+import Footer from "../components/Common/Footer";
 import TabsComponent from "../components/Dashboard/Tabs";
-import axios from "axios";
 import Search from "../components/Dashboard/Search";
 import PaginationComponent from "../components/Dashboard/Pagination";
 import Loader from "../components/Common/Loader";
@@ -23,7 +23,7 @@ function Dashboard() {
 
   const onSearchChange = (e) => {
     setSearch(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   var filteredCoins = coins.filter(
@@ -63,7 +63,7 @@ function Dashboard() {
           )}
         </div>
       )}
-      ;
+      <Footer/>
     </>
   );
 }

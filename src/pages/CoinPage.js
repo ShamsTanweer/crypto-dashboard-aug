@@ -1,11 +1,9 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../components/Common/Header";
 import Loader from "../components/Common/Loader";
 import { coinObject } from "../functions/convertObject";
 import List from "../components/Dashboard/List";
-import CoinInfo from "../components/Coin/CoinInfo";
 import { getCoinData } from "../functions/getCoinData";
 import LineChart from "../components/Coin/LineChart/lineChart";
 import SelectDays from "../components/Coin/SelectDays";
@@ -44,7 +42,7 @@ function CoinPage() {
     setIsLoading(true);
     setDays(event.target.value);
     const prices = await getCoinPrices(id, event.target.value, priceType);
-    console.log("priceshdqvbdjewvfjek>>>>>>>>>>>>", prices);
+    // console.log("priceshdqvbdjewvfjek>>>>>>>>>>>>", prices);
     if (prices.length > 0) {
       settingChartData(setChartData, prices);
       setIsLoading(false);
@@ -56,7 +54,7 @@ function CoinPage() {
     setPriceType(newType);
     // console.log(newType);
     const prices = await getCoinPrices(id, days, newType);
-    console.log("priceshdqvbdjewvfjek>>>>>>>>>>>>", newType, prices);
+    // console.log("priceshdqvbdjewvfjek>>>>>>>>>>>>", newType, prices);
     if (prices.length > 0) {
       settingChartData(setChartData, prices);
       setIsLoading(false);

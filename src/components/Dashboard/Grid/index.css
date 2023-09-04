@@ -71,7 +71,8 @@
 }
 
 .price-chip:hover,
-.icon-chip:hover{
+.icon-chip:hover,
+.watchlist-chip:hover{
     background-color: var(--green) ;
     color: var(--white);
     transition: all 0.3s;
@@ -101,6 +102,18 @@
     align-items: center;
     color: var(--green);
     font-size: 1rem;
+}
+
+.watchlist-chip{
+    border: 2px solid var(--green);
+    border-radius: 50%;
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--green);
+    margin-left: 3rem;
 }
 
 
