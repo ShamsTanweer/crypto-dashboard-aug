@@ -10,6 +10,8 @@ import SelectDays from "../components/Coin/SelectDays";
 import { settingChartData } from "../functions/settingChartData";
 import TogglePriceType from "../components/Coin/PriceType";
 import { getCoinPrices } from "../functions/getCoinPrices";
+import CoinInfo from "../components/Coin/CoinInfo";
+import Footer from "../components/Common/Footer";
 
 function CoinPage() {
   const { id } = useParams();
@@ -68,7 +70,7 @@ function CoinPage() {
         <Loader />
       ) : (
         <>
-          <div className="grey-wrapper" style={{ padding: "0rem 1rem" }}>
+          <div className="grey-wrapper" style={{ padding: "1rem 1rem" }}>
             <List coin={coinData} />
           </div>
           <div className="grey-wrapper">
@@ -78,9 +80,12 @@ function CoinPage() {
               handlePriceTypeChange={handlePriceTypeChange}
             />
             <LineChart chartData={chartData} priceType={priceType} />
+            <CoinInfo heading={coinData.name} desc={coinData.desc} />
+
           </div>
         </>
       )}
+      <Footer/>
     </div>
   );
 }

@@ -8,7 +8,7 @@ import Grid from "../Grid";
 import "./styles.css";
 import List from "../List";
 
-export default function TabsComponent({ coins }) {
+export default function TabsComponent({ coins, isWatchlistPage }) {
   const [value, setValue] = useState("Grid");
 
   const handleChange = (event, newValue) => {
@@ -46,18 +46,30 @@ export default function TabsComponent({ coins }) {
         <TabPanel value="Grid">
           <div className="grid-flex">
             {coins.map((coin, index) => {
-              return <Grid coin={coin} key={index} />;
+              return (
+                <Grid
+                  coin={coin}
+                  key={index}
+                  delay={((index + 5) % 5) * 0.1}
+                  isWatchlistPage={isWatchlistPage}
+                />
+              );
             })}
           </div>
         </TabPanel>
         <TabPanel value="List">
-          {/* <table className="list-table">
-            <tbody className="list-table"> */}
+
           {coins.map((item, index) => {
-            return <List coin={item} key={index} />;
+            return (
+              <List
+                coin={item}
+                key={index}
+                delay={(index % 10) * 0.1}
+                isWatchlistPage={isWatchlistPage}
+              />
+            );
           })}
-          {/* </tbody>
-              </table> */}
+
         </TabPanel>
       </TabContext>
     </ThemeProvider>

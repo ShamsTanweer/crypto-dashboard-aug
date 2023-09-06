@@ -11,6 +11,7 @@ import CoinInfo from "../components/Coin/CoinInfo";
 import { settingChartData } from "../functions/settingChartData";
 import TogglePriceType from "../components/Coin/PriceType";
 import LineChart from "../components/Coin/LineChart/lineChart";
+import Footer from "../components/Common/Footer";
 
 function ComparePage() {
   const [crypto1, setCrypto1] = useState("solana");
@@ -44,6 +45,7 @@ function ComparePage() {
     getData();
   }, []);
 
+  
   async function getData() {
     setIsLoading(true);
     const data1 = await getCoinData(crypto1);
@@ -60,6 +62,7 @@ function ComparePage() {
       }
     }
   }
+
 
   const handleCoinChange = async (event, isCoin2) => {
     setIsLoading(true);
@@ -101,10 +104,10 @@ function ComparePage() {
               noPTag={true}
             />
           </div>
-          <div className="grey-wrapper" style={{ padding: "0.5rem 0rem" }}>
+          <div className="grey-wrapper" style={{ padding: "1rem 1rem" }}>
             <List coin={crypto1Data} />
           </div>
-          <div className="grey-wrapper" style={{ padding: "0.5rem 0rem" }}>
+          <div className="grey-wrapper" style={{ padding: "1rem 1rem" }}>
             <List coin={crypto2Data} />
           </div>
           <div className="grey-wrapper">
@@ -123,6 +126,7 @@ function ComparePage() {
           <CoinInfo heading={crypto2Data.name} desc={crypto2Data.desc} />
         </>
       )}
+      <Footer/>
     </div>
   );
 }

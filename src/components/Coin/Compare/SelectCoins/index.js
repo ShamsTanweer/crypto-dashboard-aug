@@ -8,14 +8,7 @@ function SelectCoins({ crypto1, crypto2, handleCoinChange }) {
   const [allCoins, setAllCoins] = useState([]);
 
   const styles = {
-    // width: {
-    //   xs: "", //0
-    //   sm: "", //600
-    //   md: "", //900
-    //   lg: "", //1200
-    //   xl: "auto", //1536
 
-    // },
     width: "auto",
     height: "2.5rem",
     color: "var(--white)",
